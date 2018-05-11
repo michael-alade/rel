@@ -2,6 +2,9 @@ var mongoose = require('../connect')
 var Schema = mongoose.Schema
 
 var board = new Schema({
+  title: {
+    type: String
+  },
   type: {
     type: Array
   },

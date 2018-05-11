@@ -6,6 +6,7 @@ class SubmissionPage extends React.Component {
     type: [],
     description: "",
     address: "",
+    title: "",
     price: ""
   }
   submit = () => {
@@ -42,8 +43,16 @@ class SubmissionPage extends React.Component {
     </div>
     <hr className="submissionPageSplit"/>
     <div>
+      <div className="stepTwoTitleBox">
+        <h5>Title</h5>
+        <div className="form-group" id="submissionEntryBox">
+            <input onChange={(e) => this.setState({title: e.target.value})} className="form-control" id="submissionDecriptionEntry"/>
+          </div>
+      </div>
+    </div>
+    <div>
       <div className="stepTitleBox">
-        <h5>Step 1 STUFF TYPE</h5>
+        <h5>Type</h5>
       </div>
       <div className="typeSelectorHolder">
         <div className="typeBox">
@@ -80,39 +89,32 @@ class SubmissionPage extends React.Component {
     </div>
     <div>
       <div className="stepTwoTitleBox">
-        <h5>Step 2 DOCUMENT STUFF</h5>
+        <h5>Description</h5>
         <div className="form-group" id="submissionEntryBox">
-            <label for="submissionDecriptionEntry">Example textarea</label>
             <textarea onChange={(e) => this.setState({description: e.target.value})} className="form-control" id="submissionDecriptionEntry" rows="3"></textarea>
           </div>
       </div>
     </div>
     <div>
       <div className="stepTitleBox">
-        <h5>Step 3 ADDRESS OF STUFF</h5>
+        <h5>Location</h5>
         <div className="form-group" id="submissionEntryBox">
-            <label for="submissionDecriptionEntry">Example textarea</label>
             <textarea onChange={(e) => this.setState({address: e.target.value})} className="form-control" id="submissionDecriptionEntry" rows="3"></textarea>
         </div>
       </div>
     </div>
     <div>
       <div className="stepTitleBox">
-        <h5>Step 4 PAYMENT INFO</h5>
+        <h5>Price</h5>
         <div className="paymentRequestBox">
-          <p>Would you like to request payment?</p>
-          <div id="paymentCheck">
-            <input type="checkbox" className="form-check-input"/>
-          </div>
-          <div className="priceVerification">
-            <p>How much? (All prices in USD)</p>
+          {/* <div className="priceVerification"> */}
             <div className="input-group mb-4 mr-sm-2" id="priceInputField">
               <div className="input-group-prepend">
                 <div className="input-group-text">$</div>
               </div>
               <input type="text" onChange={(e) => this.setState({price: e.target.value})} className="form-control" placeholder="Price"/>
             </div>
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </div>

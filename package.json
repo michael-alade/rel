@@ -5,6 +5,7 @@
   "dependencies": {
     "auth0-js": "^9.5.1",
     "cookie-parser": "^1.4.3",
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "mongoose": "^5.1.0",
     "morgan": "^1.9.0",
@@ -15,6 +16,7 @@
   },
   "proxy": "http://localhost:3001",
   "scripts": {
+    "deploy": "npm run build && node server.js",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "heroku-postbuild": "npm run build",

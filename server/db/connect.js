@@ -1,5 +1,7 @@
 var mongoose = require('mongoose')
+var dotenv = require('dotenv')
+dotenv.config()
 
-mongoose.connect('mongodb://localhost/relacks')
+mongoose.connect(process.env.MONGODB_DATABASE)
 
 module.exports = mongoose

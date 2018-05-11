@@ -5,6 +5,8 @@ var express = require('express');
 var mongoose = require('mongoose');
 //var passport = require('passport');
 var api = require('./server/routes/api/api')
+var dotenv = require('dotenv')
+dotenv.config()
 
 var bodyParser = require('body-parser');
 
@@ -13,12 +15,12 @@ var app = express();
 var router = express.Router();
 //set our port to either a predetermined port number if you have set 
 //it up, or 3001
-var port = process.env.API_PORT || 3001;
+var port = process.env.API_PORT || 3000;
 //now we should configure the API to use bodyParser and look for 
 //JSON data in the request body
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(express.static("client/build"));
+app.use(express.static("build"));
 //To prevent errors from Cross Origin Resource Sharing, we will set 
 //our headers to allow CORS with middleware like so:
 app.use(function(req, res, next) {
